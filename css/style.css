@@ -1,0 +1,86 @@
+.carousel-control.left, .carousel-control.right {
+	background-image:none !important;
+	filter:none !important;
+}
+
+html{
+	height: 100%;
+	padding-top: 50px;
+}
+body{
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+/*TOP NAVBAR*/
+#top-nav{
+	background-color: orangered;
+}
+.navbar-brand{
+	color: white !important;
+}
+#menu-btns{
+	box-shadow: 0px 3px 4px #888888;
+	color: white !important;
+}
+#menu-btns > ul > li > a{
+	color: white !important;
+}
+#menu-btns > ul > li > a:hover{
+	background-color:  #5bc0de;
+}
+.right-btns{
+	padding-right: 20px;
+}
+
+/*product list page*/
+.product-border{
+	border: hidden;
+	box-shadow: 1px 1px 1px #888888;
+	margin-bottom: 20px;
+}
+.product-title{
+	color: darkblue;
+}
+.product-description-label{
+	text-decoration:underline;
+}
+
+/*login page*/
+.login-form{
+	align:center;
+}
+.login-welcome{
+	color: orangered;
+}
+.lgn-btn{
+	margin-top: 20px;
+}
+
+/*Home page*/
+.home-products{
+	border: 2px solid;
+	border-image: linear-gradient(45deg, #FFFFFF, #5bc0de) 1;
+	margin-bottom: 20px;
+}
+.serif{
+	font-family: "Times New Roman", Times, serif;
+}
+.welcome-label{
+	color: #4cbb17;
+	margin-top: 30px;
+	padding-bottom: 20px;
+	font-size: x-large;
+}
+.welcome-btn{
+	color: white;
+	background-color: orangered;
+}
+.welcome-btn:hover{
+	background-color: #5bc0de;
+	color: white;
+}
+#sticky-footer {
+	grid-row-start: 2;
+	grid-row-end: 3;
+}

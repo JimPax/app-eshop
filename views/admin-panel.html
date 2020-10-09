@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <h1>Insert product</h1>
+            <form role="form" name="form1">
+                <div>
+                    <label>Name</label>
+                    <input type="text"  required ng-model="product.name" placeholder="Enter name" class="form-control">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" required ng-model="product.description" placeholder="Enter descrdiption" class="form-control">
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="text" required ng-model="product.price"  placeholder="Enter price" class="form-control">
+                </div>
+                <div>
+                    <label>Quantity</label>
+                    <input type="text" required ng-model="product.items" placeholder="Enter quantity" class="form-control">
+                </div>
+                <button type="submit" ng-click="insert(product)" class="btn btn-success lgn-btn">Insert</button>
+            </form>
+            <label class="alert-success">{{successmsg}}</label>
+            <label class="alert-danger">{{error}}</label>
+            <div ng-hide="hideVar">
+                <h4>Upload pictures for product {{pcode}}</h4>
+                <span>Upload on file select</span>
+                <button ngf-select="uploadFiles($files)" multiple
+                        accept="image/*">Select Files</button>
+                <br>
+            </div>
+            <ul>
+                <li ng-repeat="f in files">
+                    {{f.name}}
+                </li>
+            </ul>
+            <label class="alert-success">{{succAddImgmsg}}</label>
+        </div>
+
+        <div ng-controller="updatePCtrl" class="col-sm-6 col-md-4">
+            <h1>Update product</h1>
+            <label for="updateSelect">Select a product:</label>
+            <select name="updateSelect" id="updateSelect"
+                    ng-model="slctdProduct" ng-options="option.name for option in prdctDet track by option.code"></select>
+            <button type="submit" ng-click="select(slctdProduct)" class="btn btn-warning lgn-btn">Select</button>
+            <form role="form" name="formup" ng-hide="uhideVar">
+                <div>
+                    <label>Name</label>
+                    <input type="text"  required ng-model="uproduct.name" class="form-control">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" required ng-model="uproduct.description" class="form-control">
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="text" required ng-model="uproduct.price" class="form-control">
+                </div>
+                <div>
+                    <label>Quantity</label>
+                    <input type="text" required ng-model="uproduct.items" class="form-control">
+                </div>
+                <button type="submit" ng-click="update(uproduct)" class="btn btn-success lgn-btn">Update</button>
+            </form>
+            <label class="alert-success">{{usuccessmsg}}</label>
+            <label class="alert-danger">{{uerror}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-controller="deletePCtrl" class="col-sm-6 col-md-4">
+            <h1>Delete product</h1>
+            <label for="deleteSelect">Select a product:</label>
+            <select name="deleteSelect" id="deleteSelect"
+                    ng-model="selectedProduct" ng-options="option.name for option in prDet track by option.code"></select>
+            <button type="submit" ng-click="delete(selectedProduct)" class="btn btn-warning lgn-btn">Delete</button>
+            <label class="alert-success">{{dltmsg}}</label>
+        </div>
+    </div>
+    <a href="" ng-click="logout()">Logout</a>
+</div>

@@ -1,0 +1,67 @@
+<div class="container" ng-if="oflag">
+    <h1 ng-if="!complete">Order form</h1>
+    <h1 ng-if="complete">Order complete</h1>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <h2>1.Order review</h2>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in prDet" ng-if="!$last">
+                        <td>{{x.name}}</td>
+                        <td>{{x.price|currency}}</td>
+                        <td>{{x.quantity}}</td>
+                        <td>{{x.price * x.quantity|currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <label>Total price:{{fprice|currency}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <h2>2.Shipping Address</h2>
+            <form role="form" name="orderForm">
+                <div>
+                    <label>First name</label>
+                    <input type="text" required ng-model="orderd.name" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>Last name</label>
+                    <input type="text" required ng-model="orderd.lastname" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>Street Address</label>
+                    <input type="text" required ng-model="orderd.address" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" required ng-model="orderd.city" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>ZIP code</label>
+                    <input type="text" required ng-model="orderd.zipcode" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>Phone number</label>
+                    <input type="text" required ng-model="orderd.phone" class="form-control" ng-disabled="complete">
+                </div>
+                <div>
+                    <label>E-mail</label>
+                    <input type="email" required ng-model="orderd.email" class="form-control" ng-disabled="complete">
+                </div>
+                <button type="submit"  ng-click="checkout(orderd)"  ng-disabled="complete" class="btn btn-success lgn-btn">
+                    Checkout</button>
+                <label class="alert-success">{{success}}</label>
+                <label class="alert-danger">{{error}}</label>
+            </form>
+        </div>
+    </div>
+</div>

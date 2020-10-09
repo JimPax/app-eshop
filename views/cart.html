@@ -1,0 +1,50 @@
+<h1 class="main-title">Shopping cart</h1>
+<div class="container" ng-if="sflag">
+    <div class="row row-centered">
+        <div class="panel panel-success col-md-4">
+            <div class="pane-heading"><label>You need to logged in before visit your shopping cart</label></div>
+            <div class="panel-body">
+                <a href="#!/login" class="btn btn-primary" role="button">Sign in</a>
+                <a href="#!/register" class="btn btn-success" role="button">Sign up</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" ng-if="cflag">
+    <a href="#!/product-list" class="btn btn-success" role="button">
+        <span class="glyphicon glyphicon-circle-arrow-left btn-glyphicons-left"></span>Continue shopping
+    </a>
+    <section class="products-tab">
+        <ul class="products-list">
+            <!--items-->
+            <li class="list-item" ng-repeat="x in prDet" ng-if="!$last">
+                <div class="row">
+                    <img src="{{x.img}}" class="img-thumbnail col-md-2" alt="product" width="110" height="110">
+                    <!--code,name,wl-btn-->
+                    <div class="col-md-4">
+                        <span class="product-code">{{ x.code }}</span>
+                        <h3 class="product-name">{{ x.name }}</h3>
+                    </div>
+                    <!--price,quantity,delete-->
+                    <div class="col-md-6 inline-display price-row">
+                        <label>Price:</label><span class="price-display">{{ x.price }} $</span>
+                        <div class="form-group inline-display">
+                            <label>Quantity: </label>
+                            <button ng-click="rmvQuant(x.code)"><span class="glyphicon glyphicon-minus" ></span></button>
+                            <input type="text" style="width: 30px" value="{{x.quantity}}">
+                            <button ng-click="addQuant(x.code)"><span class="glyphicon glyphicon-plus" ></span></button>
+                        </div>
+                        <span class="price-display" >{{ x.quantity * x.price }} $</span>
+                        <button type="button" ng-click="removeItem(x.code)" class="remove-btn-display"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <label class="label label-warning">{{ msg }}</label>
+        <div class="all-total-price-title">Total price:</div>
+        <div class="all-total-price-number" >{{ fprice }}$</div>
+    </section>
+    <a href="#!/order" ng-click="toCheckout()" class="btn btn-success pull-right checkout-btn" role="button">
+        Proceed to chekout<span class="glyphicon glyphicon-circle-arrow-right btn-glyphicons-right"></span>
+    </a>
+</div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" /> 
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-view></div>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pr-page.css" rel="stylesheet">
+<link href="css/cart.css" rel="stylesheet">
+<link href="css/slider.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
+
+<div ng-include="'views/main-navbar.html'"></div>
+<div ng-include="'views/footer.html'"></div>
+
+<!-- Angularjs lib -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/controllers/productsListCtrl.js"></script>
+<script src="js/controllers/productDetailsCtrl.js"></script>
+<script src="js/controllers/insertProductCtrl.js"></script>
+<script src="js/controllers/registerCtrl.js"></script>
+<script src="js/controllers/loginCtrl.js"></script>
+<script src="js/controllers/updateProductCtrl.js"></script>
+<script src="js/controllers/deleteProductCtrl.js"></script>
+<script src="js/controllers/cartCtrl.js"></script>
+<script src="js/controllers/orderCtrl.js"></script>
+<script src="js/controllers/homeCtrl.js"></script>
+<script src="js/controllers/navbarCtrl.js"></script>
+
+<script src="js/services/ProductDetailsService.js"></script>
+<script src="js/services/insertProductService.js"></script>
+<script src="js/services/registerService.js"></script>
+<script src="js/services/loginService.js"></script>
+<script src="js/services/updateProducteService.js"></script>
+<script src="js/services/deleteProductService.js"></script>
+<script src="js/services/sessionService.js"></script>
+<script src="js/services/cartService.js"></script>
+<script src="js/services/orderService.js"></script>
+<script src="js/services/homeService.js"></script>
+
+
+</body>
+</html>

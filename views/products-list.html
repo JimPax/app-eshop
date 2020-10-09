@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+        <h1>Product List</h1>
+        <label><input ng-model="searchText" class="form-control" placeholder="Search for products"></label>
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="ipc in prDet | filter:searchText">
+                <div class = "product-border">
+                    <div ng-repeat="img in ipc track by $index"></div>
+                        <img ng-src="{{ipc.img_path_list[0].img_path}}" class="img-responsive">
+                    <div>
+                        <h2 class="product-title">{{ipc.name}}</h2>
+                        <label class="product-description-label">Description</label>
+                        <p>{{ipc.description}}</p>
+                        <b>{{ipc.price | currency}}</b>
+                        <a class="btn btn-large btn-info" href="#!/product-details/{{ipc.code}}">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

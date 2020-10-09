@@ -1,0 +1,52 @@
+<div class="container">
+    <h1>Register form</h1>
+    <div class="row">
+        <form role="form" name="registerForm">
+            <div class="col-sm-6 col-md-4">
+                <h2>1.User information</h2>
+                <div>
+                    <label>Username</label>
+                    <input type="text" required ng-model="userd.username" placeholder="Enter username" class="form-control">
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" required ng-model="userd.password" placeholder="Enter password" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <h2>2.Shipping information</h2>
+                <div>
+                    <label>Name</label>
+                    <input type="text" required ng-model="userd.name" placeholder="Enter name" class="form-control">
+                </div>
+                <div>
+                    <label>Lastname</label>
+                    <input type="text" required ng-model="userd.lastname"  placeholder="Enter lastname" class="form-control">
+                </div>
+                <div>
+                    <label>Street address</label>
+                    <input type="text" required ng-model="userd.address" placeholder="Enter address" class="form-control">
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" required ng-model="userd.city" placeholder="Enter city" class="form-control">
+                </div>
+                <div>
+                    <label>Zip code</label>
+                    <input type="text" required ng-model="userd.zipcode" placeholder="Enter ZIP code" class="form-control">
+                </div>
+                <div>
+                    <label>Phone number</label>
+                    <input type="text" required ng-model="userd.phone" placeholder="Enter phone number" class="form-control">
+                </div>
+                <div>
+                    <label>E-mail</label>
+                    <input type="email" required ng-model="userd.email" placeholder="Enter e-mail@example.com" class="form-control">
+                </div>
+                <button type="submit" ng-disabled="form1.$invalid" ng-click="insert(userd)" class="btn btn-success lgn-btn">Create your account</button>
+                <label class="alert-success">{{success}}</label>
+                <label class="alert-danger" >{{error}}</label>
+            </div>
+        </form>
+    </div>
+</div>

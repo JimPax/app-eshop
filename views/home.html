@@ -1,0 +1,23 @@
+<div class="serif" align="center">
+<h1 style="color:#5bc0de">eShop</h1>
+    <h1 style="color:orangered">Webapp</h1>
+</div>
+<section ng-controller="loginCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="ipc in prDet |limitTo:3">
+                <div class = "home-products">
+                    <div ng-repeat="img in ipc track by $index"></div>
+                    <img ng-src="{{ipc.img_path_list[0].img_path}}" class="img-responsive">
+                    <a class="btn btn-large btn-info" href="#!/product-list">See more products</a>
+                </div>
+            </div>
+        </div>
+        <div ng-if="ulgnoff" class="row">
+            <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 text-center" >
+                <label class="welcome-label">Welcome</label><br>
+                <a class="btn btn-large welcome-btn" href="#!/login">Sign in</a>
+            </div>
+        </div>
+    </div>
+</section>

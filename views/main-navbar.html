@@ -1,0 +1,27 @@
+<header>
+    <!--TOP NAVBAR-->
+    <div ng-controller="loginCtrl">
+        <nav id="top-nav" class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="navbarCtrl">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <div ng-if="algn" id="menu-btns" class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+                <ul class="nav navbar-nav">
+                    <li ng-if="ulgnon"><a href="" ng-click="logout()">Sign out</a></li>
+                    <li ng-if="ulgnoff"><a href="#!/login">Sign in</a></li>
+                    <li ng-if="ulgnoff"><a href="#!/register">Sign up</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right right-btns">
+                    <li><a href="#!/product-list">Products</a></li>
+                    <li><a class="fa fa-cart-arrow-down" href="#!/cart">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

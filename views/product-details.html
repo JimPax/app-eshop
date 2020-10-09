@@ -1,0 +1,30 @@
+<section ng-app="eshopApp">
+<div class="container">
+    <div class="row">
+            <div uib-carousel interval="myInterval" active="activeSlide" no-wrap="noWrapSlides" class="col-md-7 product-img-descr-tab">
+                <div uib-slide ng-repeat="sl in slides track by sl.id" index="$index">
+                    <img ng-src="{{sl.img_path}}">
+                </div>
+            </div>
+        <div class="col-md-3 product-img-descr-tab">
+            <h2 class="product-name">{{myData["0"].name}}</h2>
+            <p class="product-fast-description">{{myData["0"].description}}</p>
+        </div>
+        <div class="col-md-7 product-availability-tab">
+            <h4 class="availability-choices">Quantity : {{myData["0"].items}}</h4>
+
+            <div class="product-availability-pos">
+                <div ng-if="availability" class="available-circle"></div>
+                <span  ng-if="availability" class="available-state">Available</span>
+                <div ng-if="!availability" class="unavailable-circle"></div>
+                <span  ng-if="!availability" class="unavailable-state">Unavailable</span>
+            </div>
+            <div class="price-settings">
+                Price : {{myData["0"].price | currency}}
+            </div>
+            <button type="button" ng-click="addcart()" class="btn btn-block btn-cart">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+            <label class="label label-warning">{{ plft }}</label>
+        </div>
+    </div>
+</div>
+</section>
