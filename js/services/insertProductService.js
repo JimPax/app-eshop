@@ -24,7 +24,7 @@ app.factory('InsertProduct',function($http, $httpParamSerializerJQLike,Upload){
         uploadImgs:function(files){
             if (files && files.length) {
                 var promises = Upload.upload({
-                    url: 'webservices/uploadimgs.php',
+                    url: 'webservices/uploadImgs.php',
                     data: {
                         files: files
                     }

@@ -6,7 +6,7 @@ app.factory('DeleteProduct',function($http, $httpParamSerializerJQLike){
         getDetails:function(){
             var promise = $http({
                 method: 'GET',
-                url: '../app/webservices/allProductDetails.php'
+                url: 'webservices/allProductDetails.php'
             }).then(function (response) {
                 var data = response.data;
                 console.log(data);
