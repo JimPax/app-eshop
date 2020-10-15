@@ -3,7 +3,7 @@
     <div class="row">
             <div uib-carousel interval="myInterval" active="activeSlide" no-wrap="noWrapSlides" class="col-md-7 product-img-descr-tab">
                 <div uib-slide ng-repeat="sl in slides track by sl.id" index="$index">
-                    <img ng-src="{{sl.img_path}}">
+                    <img ng-src="{{sl.img_path}}" class="img-responsive">
                 </div>
             </div>
         <div class="col-md-3 product-img-descr-tab">
